@@ -1,0 +1,312 @@
+.container {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-height: 100vh;
+}
+
+.headerWrapper {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 5vh;
+}
+
+.title {
+  font-size: clamp(2rem, 8vw, 80px);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.componentsTitle {
+  font-weight: 600;
+  margin-top: 2rem;
+}
+
+.components {
+  list-style-type: disc;
+  margin-top: 0.75rem;
+}
+
+.components a:hover {
+  text-decoration: underline;
+}
+
+/* Card Styles */
+.card {
+  background: var(--background);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  max-width: 500px;
+  width: 100%;
+  transition: all 0.2s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transform: translateY(-1px);
+}
+
+@media (prefers-color-scheme: dark) {
+  .card {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* Card Title */
+.cardTittle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--foreground);
+}
+
+/* Section Styles */
+.section {
+  margin: 1rem 0;
+  max-width: 500px;
+  width: 100%;
+}
+
+/* Error Message Styles */
+.errorMessage {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.errorMessage p {
+  color: #dc2626;
+  margin: 0.25rem 0;
+}
+
+.networkInfo {
+  font-size: 0.875rem;
+  opacity: 0.8;
+}
+
+@media (prefers-color-scheme: dark) {
+  .errorMessage {
+    background: rgba(239, 68, 68, 0.2);
+    border: 1px solid rgba(239, 68, 68, 0.4);
+  }
+  
+  .errorMessage p {
+    color: #fca5a5;
+  }
+}
+
+/* Typography Styles */
+.label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--foreground);
+  opacity: 0.7;
+  margin-bottom: 0.25rem;
+}
+
+.address {
+  font-family: var(--font-source-code-pro), monospace;
+  font-size: 0.875rem;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  word-break: break-all;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  .address {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Balance Section */
+.balanceSection {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  .balanceSection {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+.balance {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--foreground);
+  font-family: var(--font-source-code-pro), monospace;
+}
+
+/* Form Styles */
+.messageInput {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  background: var(--background);
+  color: var(--foreground);
+  transition: border-color 0.2s ease-in-out;
+}
+
+.messageInput:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.messageInput::placeholder {
+  color: var(--foreground);
+  opacity: 0.5;
+}
+
+@media (prefers-color-scheme: dark) {
+  .messageInput {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .messageInput:focus {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1);
+  }
+}
+
+/* Button Styles */
+.button {
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  margin-bottom: 1rem;
+}
+
+/* Inline controls for counter */
+.inlineControls {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.inlineControls .button {
+  width: auto;
+  padding: 0.6rem 1rem;
+  margin-bottom: 0;
+}
+
+.inlineControls .messageInput {
+  flex: 1 1 auto;
+  margin-bottom: 0;
+}
+
+.button:hover:not(:disabled) {
+  background: #2563eb;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .button {
+    background: #1d4ed8;
+  }
+  
+  .button:hover:not(:disabled) {
+    background: #1e40af;
+  }
+}
+
+/* Signature Section */
+.signatureSection {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  .signatureSection {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+.signature {
+  font-family: var(--font-source-code-pro), monospace;
+  font-size: 0.75rem;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+  padding: 0.75rem;
+  word-break: break-all;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  line-height: 1.4;
+}
+
+@media (prefers-color-scheme: dark) {
+  .signature {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Success Message Styles */
+.successMessage {
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.successMessage p {
+  color: #16a34a;
+  margin: 0.25rem 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .successMessage {
+    background: rgba(34, 197, 94, 0.2);
+    border: 1px solid rgba(34, 197, 94, 0.4);
+  }
+  
+  .successMessage p {
+    color: #4ade80;
+  }
+}
